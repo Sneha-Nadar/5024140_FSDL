@@ -1,47 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Certificate Details</title>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
 </head>
 
 <body>
 
-<h1>Course Modules</h1>
+    <h1>Student Registration Form</h1>
 
-<ul>
-    <li>HTML Elements</li>
-    <li>Attributes</li>
-    <li>Forms</li>
-    <li>Multimedia</li>
-</ul>
+    <form>
 
-<h2>Evaluation Criteria</h2>
+        <label>Full Name:</label><br>
+        <input type="text" name="name" required><br><br>
 
-<ol>
-    <li>Practical Implementation</li>
-    <li>Viva Performance</li>
-    <li>Attendance</li>
-</ol>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
 
-<hr>
+        <label>Password:</label><br>
+        <input type="password" name="password"><br><br>
 
-<h1>Certificate Record</h1>
+        <label>Gender:</label><br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female<br><br>
 
-<table border="1">
-    <tr>
-        <th>Student Name</th>
-        <th>Course</th>
-        <th>Status</th>
-    </tr>
-    <tr>
-        <td>Sneha Nadar</td>
-        <td>HTML5</td>
-        <td>Completed</td>
-    </tr>
-</table>
+        <label>Skills:</label><br>
+        <input type="checkbox"> Python
+        <input type="checkbox"> Java
+        <input type="checkbox"> HTML<br><br>
 
-<br>
-<a href="index.html">Back to Certificate</a>
+        <label>Course:</label><br>
+        <select>
+            <option>AIML</option>
+            <option>Computer Science</option>
+            <option>Information Technology</option>
+        </select><br><br>
+
+        <input type="submit" value="Register">
+        <input type="reset">
+
+    </form>
+
+    <h2>Course Details</h2>
+
+    <table border="1">
+        <tr>
+            <th>Course</th>
+            <th>Duration</th>
+        </tr>
+        <tr>
+            <td>AIML</td>
+            <td>4 Years</td>
+        </tr>
+        <tr>
+            <td>CS</td>
+            <td>4 Years</td>
+        </tr>
+    </table>
 
 </body>
 </html>
+
