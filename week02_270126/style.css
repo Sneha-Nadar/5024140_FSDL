@@ -1,26 +1,39 @@
+/* Global */
+
 body {
     margin: 0;
     font-family: 'Georgia', serif;
-    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-    color: #333;
+    background-color: #0b1c2d;
+    color: #2c2c2c;
 }
 
-/* Hero Section */
+/* Hero Section with Background Image */
 
 .hero {
-    height: 60vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
+
+    background-image:
+        linear-gradient(
+            rgba(15, 32, 39, 0.75),
+            rgba(15, 32, 39, 0.75)
+        ),
+        url("royal-travel.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* Hero Text */
+
 .hero h1 {
-    font-size: 52px;
-    letter-spacing: 2px;
-    color: #ffffff;
+    font-size: 54px;
+    letter-spacing: 3px;
+    color: #f5e6c8;
 }
 
 .hero h1::after {
@@ -29,20 +42,22 @@ body {
 }
 
 .tagline {
-    font-size: 18px;
-    color: #dddddd;
+    font-size: 19px;
+    color: #e6d9b8;
 }
 
 /* Content Card */
 
 .content {
-    max-width: 900px;
-    margin: -80px auto 40px;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    max-width: 950px;
+    margin: -90px auto 50px;
+    background: #fffaf0;
+    padding: 45px;
+    border-radius: 22px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
+
+/* Intro Text */
 
 .content p {
     font-size: 17px;
@@ -59,10 +74,10 @@ body {
 
 h2 {
     margin-top: 40px;
-    color: #2c5364;
+    color: #0b1c2d;
 }
 
-/* Destination List */
+/* Destinations List */
 
 .destinations {
     list-style: none;
@@ -70,21 +85,21 @@ h2 {
 }
 
 .destinations li {
-    padding: 14px;
-    margin: 10px 0;
-    background: linear-gradient(to right, #f5f5f5, #ffffff);
-    border-left: 5px solid #d4af37;
-    font-size: 18px;
+    padding: 16px;
+    margin: 12px 0;
+    background: linear-gradient(to right, #fffaf0, #fdf6e3);
+    border-left: 6px solid #d4af37;
+    font-size: 19px;
     transition: 0.4s;
 }
 
 .destinations li:hover {
     transform: translateX(10px);
-    background: #2c5364;
+    background: #0b1c2d;
     color: #ffffff;
 }
 
-/* Table */
+/* Table Styling */
 
 table {
     width: 100%;
@@ -93,9 +108,9 @@ table {
 }
 
 th {
-    background-color: #2c5364;
-    color: #ffffff;
-    padding: 14px;
+    background-color: #0b1c2d;
+    color: #f5e6c8;
+    padding: 16px;
 }
 
 td {
@@ -107,17 +122,18 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Button */
+/* Call-to-Action Button */
 
 .cta {
     display: inline-block;
-    margin-top: 40px;
-    padding: 16px 36px;
+    margin-top: 45px;
+    padding: 18px 42px;
     text-decoration: none;
-    color: #ffffff;
-    background: linear-gradient(to right, #d4af37, #b8860b);
-    border-radius: 40px;
-    font-size: 16px;
+    color: #0b1c2d;
+    background: linear-gradient(to right, #d4af37, #f5e6c8);
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: bold;
     transition: 0.4s;
 }
 
