@@ -16,15 +16,15 @@ this.qty = 1
 // OBJECT ARRAY
 let products = [
 
-new Product("Apple",120,"images/apple.jpg","fruit"),
-new Product("Banana",40,"images/banana.jpg","fruit"),
-new Product("Milk",60,"images/milk.jpg","dairy"),
-new Product("Bread",50,"images/bread.jpg","dairy"),
-new Product("Rice",90,"images/rice.jpg","dairy"),
-new Product("Eggs",70,"images/eggs.jpg","dairy"),
-new Product("Tomato",30,"images/tomato.jpg","vegetable"),
-new Product("Potato",35,"images/potato.jpg","vegetable"),
-new Product("Cheese",150,"images/cheese.jpg","dairy")
+new Product("Apple",120,"images/apple.jpeg","fruit"),
+new Product("Banana",40,"images/banana.jpeg","fruit"),
+new Product("Milk",60,"images/milk.jpeg","dairy"),
+new Product("Bread",50,"images/bread.jpeg","dairy"),
+new Product("Rice",90,"images/rice.jpeg","dairy"),
+new Product("Eggs",70,"images/eggs.jpeg","dairy"),
+new Product("Tomato",30,"images/tomato.jpeg","vegetable"),
+new Product("Potato",35,"images/potato.jpeg","vegetable"),
+new Product("Cheese",150,"images/cheese.jpeg","dairy")
 
 ]
 
