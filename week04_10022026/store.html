@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>FreshBasket Grocery Store</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#e8f5e9;
+}
+
+/* HEADER */
+
+header{
+background:#2e7d32;
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.search{
+padding:8px;
+width:250px;
+border:none;
+border-radius:4px;
+}
+
+/* CART */
+
+.cart{
+background:white;
+padding:8px 12px;
+border-radius:6px;
+color:#2e7d32;
+font-weight:bold;
+}
+
+/* CATEGORY BUTTONS */
+
+.categories{
+text-align:center;
+background:white;
+padding:10px;
+}
+
+.categories button{
+margin:5px;
+padding:8px 15px;
+border:none;
+background:#43a047;
+color:white;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.categories button:hover{
+background:#2e7d32;
+}
+
+/* PRODUCT GRID */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:20px;
+padding:25px;
+max-height:500px;
+overflow-y:auto;
+}
+
+/* PRODUCT CARD */
+
+.card{
+background:white;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+padding:15px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* IMAGE */
+
+.product-img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:6px;
+}
+
+/* PRICE */
+
+.price{
+color:#ff8f00;
+font-weight:bold;
+font-size:18px;
+}
+
+/* QUANTITY */
+
+.qty{
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:10px;
+}
+
+.qty button{
+padding:5px 10px;
+margin:5px;
+}
+
+/* ADD BUTTON */
+
+.add-btn{
+margin-top:10px;
+background:#2e7d32;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:4px;
+cursor:pointer;
+}
+
+.add-btn:hover{
+background:#1b5e20;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🥬 FreshBasket</div>
+
+<input type="text" placeholder="Search groceries..." class="search" id="search">
+
+<div class="cart">
+Cart ₹ <span id="total">0</span>
+</div>
+
+</header>
+
+<div class="categories">
+
+<button onclick="filterCategory('all')">All</button>
+<button onclick="filterCategory('fruit')">Fruits</button>
+<button onclick="filterCategory('vegetable')">Vegetables</button>
+<button onclick="filterCategory('dairy')">Dairy</button>
+
+</div>
+
+<div class="products" id="products"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
