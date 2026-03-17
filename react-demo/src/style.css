@@ -16,29 +16,64 @@ body{
 }
 
 .mood-selector{
-  margin-top:20px;
+
+display:grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap:20px;
+
+width:500px;
+
+margin:40px auto;
+
 }
 
 .mood-selector button{
 
-font-size:35px;
-margin:10px;
-padding:15px;
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+padding:20px;
 
 border:none;
-border-radius:50%;
+
+border-radius:15px;
 
 cursor:pointer;
 
-transition:all 0.3s ease;
+transition:0.3s;
+
+background:white;
 
 }
 
 .mood-selector button:hover{
 
-transform:scale(1.3) rotate(10deg);
+transform:scale(1.1);
 
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+}
+
+.label{
+
+font-size:14px;
+
+margin-top:5px;
+
+}
+
+.emoji{
+
+font-size:35px;
 
 }
 
