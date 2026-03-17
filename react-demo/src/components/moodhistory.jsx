@@ -1,4 +1,6 @@
-function MoodHistory({history}){
+import React from "react";
+
+function MoodHistory({ history }) {
 
   return (
 
@@ -9,14 +11,14 @@ function MoodHistory({history}){
       {history.length === 0 ? (
         <p>No moods recorded yet</p>
       ) : (
-        history.map((m,index)=>(
+        history.map((m, index) => (
           <p key={index}>{m}</p>
         ))
       )}
 
     </div>
 
-  )
+  );
 }
 
-export default MoodHistory
+export default MoodHistory;

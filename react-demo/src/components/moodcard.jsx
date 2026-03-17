@@ -1,4 +1,6 @@
-function MoodCard({mood}){
+import React from "react";
+
+function MoodCard({ mood }) {
 
   return (
 
@@ -10,7 +12,7 @@ function MoodCard({mood}){
 
     </div>
 
-  )
+  );
 }
 
-export default MoodCard
+export default MoodCard;

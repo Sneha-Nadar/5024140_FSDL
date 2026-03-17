@@ -1,35 +1,36 @@
-import { useState } from "react"
-import Navbar from "./components/Navbar"
-import MoodSelector from "./components/MoodSelector"
-import MoodCard from "./components/MoodCard"
-import MoodHistory from "./components/MoodHistory"
-import Footer from "./components/Footer"
+import React, { useState } from "react";
 
-function App(){
+import Navbar from "./components/Navbar";
+import MoodSelector from "./components/moodselector";
+import MoodCard from "./components/moodcard";
+import MoodHistory from "./components/moodhistory";
+import Footer from "./components/footer";
 
-  const [mood,setMood] = useState("😊")
-  const [history,setHistory] = useState([])
+function App() {
 
-  const updateMood = (newMood)=>{
-    setMood(newMood)
-    setHistory([...history,newMood])
-  }
+  const [mood, setMood] = useState("😊");
+  const [history, setHistory] = useState([]);
+
+  const updateMood = (newMood) => {
+    setMood(newMood);
+    setHistory([...history, newMood]);
+  };
 
   return (
     <div className="app">
 
-      <Navbar/>
+      <Navbar />
 
-      <MoodSelector setMood={updateMood}/>
+      <MoodSelector setMood={updateMood} />
 
-      <MoodCard mood={mood}/>
+      <MoodCard mood={mood} />
 
-      <MoodHistory history={history}/>
+      <MoodHistory history={history} />
 
-      <Footer/>
+      <Footer />
 
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

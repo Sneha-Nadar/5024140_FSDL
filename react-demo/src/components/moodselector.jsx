@@ -1,6 +1,8 @@
-function MoodSelector({setMood}){
+import React from "react";
 
-  const moods = ["😊","😐","😢","😡","😴"]
+function MoodSelector({ setMood }) {
+
+  const moods = ["😊", "😐", "😢", "😡", "😴"];
 
   return (
 
@@ -8,17 +10,18 @@ function MoodSelector({setMood}){
 
       <h2>Select Your Mood</h2>
 
-      {moods.map((mood,index)=>(
+      {moods.map((mood, index) => (
         <button
-        key={index}
-        onClick={()=>setMood(mood)}
+          key={index}
+          onClick={() => setMood(mood)}
         >
-        {mood}
+          {mood}
         </button>
       ))}
 
     </div>
-  )
+
+  );
 }
 
-export default MoodSelector
+export default MoodSelector;
