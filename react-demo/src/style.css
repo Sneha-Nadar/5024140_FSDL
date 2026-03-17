@@ -1,0 +1,82 @@
+body{
+  margin:0;
+  font-family:Segoe UI;
+  background:linear-gradient(135deg,#6a11cb,#2575fc);
+  color:white;
+  text-align:center;
+}
+
+.navbar{
+  padding:30px;
+}
+
+.navbar h1{
+  margin:0;
+  font-size:40px;
+}
+
+.mood-selector{
+  margin-top:20px;
+}
+
+.mood-selector button{
+
+  font-size:30px;
+  margin:10px;
+  padding:15px;
+
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.mood-selector button:hover{
+
+  transform:scale(1.2);
+}
+
+.mood-card{
+
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+
+  padding:30px;
+
+  border-radius:20px;
+
+  width:300px;
+
+  margin:30px auto;
+}
+
+.big-mood{
+
+  font-size:60px;
+
+}
+
+.history{
+
+  background:white;
+
+  color:black;
+
+  width:300px;
+
+  margin:auto;
+
+  padding:20px;
+
+  border-radius:15px;
+
+}
+
+.footer{
+
+  margin-top:40px;
+
+  padding:20px;
+
+}
