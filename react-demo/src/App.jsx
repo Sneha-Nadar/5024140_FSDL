@@ -10,6 +10,7 @@ function App() {
 
   const [mood, setMood] = useState("😊");
   const [history, setHistory] = useState([]);
+  const [darkMode, setDarkMode] = useState(true);
 
   const updateMood = (newMood) => {
     setMood(newMood);
@@ -28,6 +29,7 @@ function App() {
       <MoodHistory history={history} />
 
       <Footer />
+      <div className={darkMode ? "app dark" : "app light"}></div>
 
     </div>
   );
