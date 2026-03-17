@@ -2,7 +2,19 @@ import React from "react";
 
 function MoodSelector({ setMood }) {
 
-  const moods = ["😊", "😐", "😢", "😡", "😴"];
+  const moods = [
+
+    {emoji:"😊",name:"Happy"},
+    {emoji:"😐",name:"Neutral"},
+    {emoji:"😢",name:"Sad"},
+    {emoji:"😡",name:"Angry"},
+    {emoji:"😴",name:"Tired"},
+    {emoji:"🤩",name:"Excited"},
+    {emoji:"😎",name:"Confident"},
+    {emoji:"😰",name:"Stressed"},
+    {emoji:"🥳",name:"Celebrating"}
+
+  ];
 
   return (
 
@@ -10,12 +22,16 @@ function MoodSelector({ setMood }) {
 
       <h2>Select Your Mood</h2>
 
-      {moods.map((mood, index) => (
+      {moods.map((mood,index)=>(
         <button
-          key={index}
-          onClick={() => setMood(mood)}
+        key={index}
+        onClick={()=>setMood(mood)}
         >
-          {mood}
+
+        <span className="emoji">{mood.emoji}</span>
+
+        <span className="label">{mood.name}</span>
+
         </button>
       ))}
 

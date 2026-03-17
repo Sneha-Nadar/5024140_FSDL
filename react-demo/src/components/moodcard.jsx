@@ -8,7 +8,9 @@ function MoodCard({ mood }) {
 
       <h2>Your Mood Today</h2>
 
-      <p className="big-mood">{mood}</p>
+      <p className="big-mood">{mood.emoji}</p>
+
+      <h3>{mood.name}</h3>
 
     </div>
 

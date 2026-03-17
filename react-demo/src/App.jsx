@@ -8,32 +8,46 @@ import Footer from "./components/footer";
 
 function App() {
 
+  const [username, setUsername] = useState("");
   const [mood, setMood] = useState("😊");
   const [history, setHistory] = useState([]);
   const [darkMode, setDarkMode] = useState(true);
 
-  
-  const updateMood = (newMood)=>{
+  const updateMood = (newMood) => {
 
-   const today = new Date().toLocaleDateString()
+    const today = new Date().toLocaleDateString();
 
-   setMood(newMood)
+    setMood(newMood);
 
-   setHistory([...history,{mood:newMood,date:today}])
-
-   };
+    setHistory([...history,{mood:newMood,date:today}]);
+  };
 
   return (
     <div className={darkMode ? "app dark" : "app light"}>
 
       <Navbar />
 
-      {/* Theme Toggle Button */}
-      <button 
-        className="theme-btn"
-        onClick={() => setDarkMode(!darkMode)}
+      {/* Name Input */}
+      <div className="name-box">
+
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={username}
+          onChange={(e)=>setUsername(e.target.value)}
+        />
+
+      </div>
+
+      {/* Greeting */}
+      {username && <h2>Hello {username} 👋</h2>}
+
+      {/* Theme Toggle */}
+      <button
+      className="theme-btn"
+      onClick={()=>setDarkMode(!darkMode)}
       >
-       TELL ME HOW YOU FEEL
+      Toggle Theme
       </button>
 
       <MoodSelector setMood={updateMood} />

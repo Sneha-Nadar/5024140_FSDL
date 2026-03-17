@@ -9,13 +9,19 @@ function MoodHistory({ history }) {
       <h2>Mood History</h2>
 
       {history.length === 0 ? (
+
         <p>No moods recorded yet</p>
+
       ) : (
+
         history.map((item,index)=>(
-<p key={index}>
-{item.date} : {item.mood}
-</p>
-))
+          <p key={index}>
+
+            {item.date} — {item.mood.emoji} {item.mood.name}
+
+          </p>
+        ))
+
       )}
 
     </div>
