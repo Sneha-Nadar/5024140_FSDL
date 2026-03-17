@@ -33,7 +33,7 @@ function App() {
         className="theme-btn"
         onClick={() => setDarkMode(!darkMode)}
       >
-        Toggle Theme
+      
       </button>
 
       <MoodSelector setMood={updateMood} />
