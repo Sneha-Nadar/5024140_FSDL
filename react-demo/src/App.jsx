@@ -12,15 +12,29 @@ function App() {
   const [history, setHistory] = useState([]);
   const [darkMode, setDarkMode] = useState(true);
 
-  const updateMood = (newMood) => {
-    setMood(newMood);
-    setHistory([...history, newMood]);
-  };
+  
+  const updateMood = (newMood)=>{
+
+   const today = new Date().toLocaleDateString()
+
+   setMood(newMood)
+
+   setHistory([...history,{mood:newMood,date:today}])
+
+   };
 
   return (
-    <div className="app">
+    <div className={darkMode ? "app dark" : "app light"}>
 
       <Navbar />
+
+      {/* Theme Toggle Button */}
+      <button 
+        className="theme-btn"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        Toggle Theme
+      </button>
 
       <MoodSelector setMood={updateMood} />
 
@@ -29,7 +43,6 @@ function App() {
       <MoodHistory history={history} />
 
       <Footer />
-      <div className={darkMode ? "app dark" : "app light"}></div>
 
     </div>
   );
