@@ -1,32 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Expense Tracker Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<div class="container">
-    <img src="./assets/logo.png" width="60">
+<div class="app">
 
+  <div class="header">
+    <img src="./assets/logo.png" class="logo">
     <h1>Expense Tracker</h1>
+  </div>
 
-    <input type="text" id="title" placeholder="Title">
-    <input type="number" id="amount" placeholder="Amount">
+  <div class="card">
 
-    <select id="category">
-        <option value="">Select Category</option>
-        <option value="food">Food</option>
-        <option value="travel">Travel</option>
-        <option value="shopping">Shopping</option>
-    </select>
+    <div class="inputs">
+      <input type="text" id="title" placeholder="💡 Title">
+      <input type="number" id="amount" placeholder="💰 Amount">
 
-    <input type="date" id="date">
+      <select id="category">
+        <option value="">📂 Category</option>
+        <option value="food">🍔 Food</option>
+        <option value="travel">✈️ Travel</option>
+        <option value="shopping">🛍️ Shopping</option>
+      </select>
 
-    <button onclick="addExpense()">Add Expense</button>
+      <input type="date" id="date">
+    </div>
+
+    <button onclick="addExpense()" class="add-btn">
+      + Add Expense
+    </button>
 
     <p id="error"></p>
 
-    <h3>Total: ₹<span id="total">0</span></h3>
+    <div class="stats">
+      <h2>Total</h2>
+      <h1>₹<span id="total">0</span></h1>
+    </div>
 
-    <input type="text" id="search" placeholder="Search..." onkeyup="searchExpense()">
+    <input type="text" id="search" placeholder="🔍 Search..." onkeyup="searchExpense()">
 
     <div id="expenseList"></div>
+
+  </div>
+
 </div>
 
 <script type="module" src="script.js"></script>
 </body>
+</html>

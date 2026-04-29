@@ -2,35 +2,51 @@ import { validateInput } from './modules/validation.js';
 import { addNewExpense, getExpenses, deleteExpense } from './modules/expenseManager.js';
 import { formatDate, capitalize } from './modules/utils.js';
 
+const errorEl = document.getElementById("error");
+const totalEl = document.getElementById("total");
+const listEl = document.getElementById("expenseList");
+
+// 🚀 ADD EXPENSE
 window.addExpense = function () {
-    const title = document.getElementById("title").value;
+    const title = document.getElementById("title").value.trim();
     const amount = document.getElementById("amount").value;
     const category = document.getElementById("category").value;
     const date = document.getElementById("date").value;
-    const error = document.getElementById("error");
 
     try {
-        error.textContent = "";
+        errorEl.textContent = "";
 
+        // Validation
         validateInput(title, amount, date);
 
+        // Add Expense
         addNewExpense(title, amount, category, date);
+
+        // Clear Inputs
+        document.getElementById("title").value = "";
+        document.getElementById("amount").value = "";
+        document.getElementById("category").value = "";
+        document.getElementById("date").value = "";
 
         displayExpenses();
 
-    } catch (e) {
-        error.textContent = e.message;
+    } catch (err) {
+        errorEl.textContent = "⚠️ " + err.message;
     }
 };
 
+// 📦 DISPLAY EXPENSES
 function displayExpenses() {
-    const list = document.getElementById("expenseList");
-    const totalEl = document.getElementById("total");
+    const expenses = getExpenses();
 
-    list.innerHTML = "";
+    listEl.innerHTML = "";
     let total = 0;
 
-    const expenses = getExpenses();
+    if (expenses.length === 0) {
+        listEl.innerHTML = `<p style="text-align:center;opacity:0.6;">No expenses yet 😌</p>`;
+        totalEl.textContent = 0;
+        return;
+    }
 
     expenses.forEach(exp => {
         total += exp.amount;
@@ -39,22 +55,30 @@ function displayExpenses() {
         div.className = "expense";
 
         div.innerHTML = `
-            ${capitalize(exp.title)} - ₹${exp.amount} 
-            (${exp.category}) - ${formatDate(exp.date)}
-            <span class="delete" onclick="remove(${exp.id})">❌</span>
+            <div>
+                <strong>${capitalize(exp.title)}</strong><br>
+                <small>${getCategoryIcon(exp.category)} ${exp.category} • ${formatDate(exp.date)}</small>
+            </div>
+
+            <div>
+                ₹${exp.amount}
+                <span class="delete" onclick="removeExpense(${exp.id})">❌</span>
+            </div>
         `;
 
-        list.appendChild(div);
+        listEl.appendChild(div);
     });
 
     totalEl.textContent = total;
 }
 
-window.remove = function (id) {
+// 🗑️ DELETE
+window.removeExpense = function (id) {
     deleteExpense(id);
     displayExpenses();
 };
 
+// 🔍 SEARCH
 window.searchExpense = function () {
     const keyword = document.getElementById("search").value.toLowerCase();
     const items = document.querySelectorAll(".expense");
@@ -66,4 +90,15 @@ window.searchExpense = function () {
     });
 };
 
+// 🎯 CATEGORY ICONS
+function getCategoryIcon(category) {
+    switch (category) {
+        case "food": return "🍔";
+        case "travel": return "✈️";
+        case "shopping": return "🛍️";
+        default: return "📂";
+    }
+}
+
+// 🚀 INITIAL LOAD
 displayExpenses();
