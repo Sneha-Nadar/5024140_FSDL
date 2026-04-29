@@ -15,14 +15,14 @@ body {
 
 /* Layout */
 .main {
-  margin-left: 220px;
+  margin-left: 240px;
   padding: 30px;
 }
 
 /* Sidebar */
 .sidebar {
   position: fixed;
-  width: 220px;
+  width: 240px;
   height: 100vh;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(20px);
