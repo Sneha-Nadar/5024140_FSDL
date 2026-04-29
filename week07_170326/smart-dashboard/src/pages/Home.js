@@ -1,4 +1,4 @@
-//import AngularWidget from "../components/AngularWidget";
+import AngularWidget from "../components/AngularWidget";
 
 export default function Home() {
   return (
