@@ -1,3 +1,4 @@
+/* 🌌 Background Animation */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -13,20 +14,24 @@ body {
   100% {background-position: 0%;}
 }
 
-/* Layout */
+/* 📦 Main Layout */
 .main {
   margin-left: 240px;
   padding: 30px;
 }
 
-/* Sidebar */
+/* 📌 Sidebar */
 .sidebar {
   position: fixed;
-  width: 240px;
+  width: 220px;
   height: 100vh;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(20px);
   padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
 }
 
 .sidebar a {
@@ -42,7 +47,7 @@ body {
   transform: translateX(8px);
 }
 
-/* Cards */
+/* 🧊 Cards */
 .card {
   width: 260px;
   height: 170px;
@@ -59,17 +64,44 @@ body {
   box-shadow: 0 0 30px cyan;
 }
 
-/* Grid */
+/* 📊 Dashboard Grid */
 .dashboard {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-/* Toggle Button */
+/* 🔘 Buttons */
+button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ✍️ Inputs */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 10px;
+}
+
+/* 🌙 Theme Toggle */
 .toggle {
   position: fixed;
   top: 20px;
   right: 20px;
   cursor: pointer;
+  font-size: 18px;
+}
+
+/* ⚡ Angular Widget Styling */
+#angular-root {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  width: 300px;
 }
