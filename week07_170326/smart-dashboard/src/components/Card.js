@@ -1,13 +1,8 @@
-import { motion } from "framer-motion";
-
-export default function Card({ title, amount, icon }) {
+export default function Card({ title, amount }) {
   return (
-    <motion.div
-      className="card"
-      whileHover={{ scale: 1.1 }}
-    >
-      <h3>{icon} {title}</h3>
-      <h1>₹ {amount}</h1>
-    </motion.div>
+    <div className="card">
+      <h3>{title}</h3>
+      <p>₹ {amount}</p>
+    </div>
   );
 }
