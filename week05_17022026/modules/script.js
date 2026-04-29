@@ -93,9 +93,9 @@ window.searchExpense = function () {
 // 🎯 CATEGORY ICONS
 function getCategoryIcon(category) {
     switch (category) {
-        case "food": return "🍔";
-        case "travel": return "✈️";
-        case "shopping": return "🛍️";
+        case "food": return `<img src="./assets/food.png" width="18">`;
+        case "travel": return `<img src="./assets/travel.png" width="18">`;
+        case "shopping": return `<img src="./assets/shopping.png" width="18">`;
         default: return "📂";
     }
 }
